@@ -1,0 +1,65 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _11.Четни___нечетни_позиции
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double loops = double.Parse(Console.ReadLine());
+            double OddSum = 0;
+            double OddMin = double.MaxValue;
+            double OddMax = double.MinValue;
+            double EvenSum = 0;
+            double EvenMin = double.MaxValue;
+            double EvenMax = double.MinValue;
+
+            for (int i = 1; i <= loops; i++)
+            {
+                double Num = double.Parse(Console.ReadLine());
+                if (i % 2 == 0)
+                {
+                    EvenSum += Num;
+                    if (Num > EvenMax) EvenMax = Num;
+                    if (Num < EvenMin) EvenMin = Num;
+                }
+                else
+                {
+                    OddSum += Num;
+                    if (Num > OddMax) OddMax = Num;
+                    if (Num < OddMin) OddMin = Num;
+                }
+
+            }
+            Console.WriteLine($"OddSum={OddSum}");
+
+            if (OddMin == double.MaxValue)
+                Console.WriteLine($"OddMin=NO");
+            else
+                Console.WriteLine($"OddMin={OddMin}");
+
+            if (OddMax == double.MinValue)
+                Console.WriteLine($"OddMax=NO");
+            else
+                Console.WriteLine($"OddMax={OddMax}");
+
+
+
+            Console.WriteLine($"EvenSum={EvenSum}");
+
+            if (EvenMin == double.MaxValue)
+                Console.WriteLine($"EvenMin=NO");
+            else
+                Console.WriteLine($"EvenMin={EvenMin}");
+
+            if (EvenMax == double.MinValue)
+                Console.WriteLine($"EvenMax=NO");
+            else
+                Console.WriteLine($"EvenMax={EvenMax}");
+        }
+    }
+}
