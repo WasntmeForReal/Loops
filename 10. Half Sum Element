@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+
+            int biggest = int.MinValue;
+            int sum = 0;
+            
+            for (int i = 0; i < n; i++)
+            {
+                int temp = int.Parse(Console.ReadLine());
+                sum += temp;
+                if (temp > biggest)
+                {
+                    biggest = temp;
+                }
+
+
+            }
+            int allOthersNums = sum - biggest;
+            if (allOthersNums == biggest)
+            {
+                Console.WriteLine($"Yes, Sum = {biggest}");
+            }
+            else
+            {
+                Console.WriteLine($"No diff = {Math.Abs(allOthersNums-biggest)}");
+            }
+        }
+    }
+}
